@@ -68,7 +68,8 @@
     while(el.scrollWidth>max && fs>4.5 && i<60){ fs-=0.2; el.style.fontSize=fs+'px'; i++; }
   }
   function wszystko(){ studio(); kreska(); }
-  window.addEventListener('load', wszystko);
+        wszystko();
+	window.addEventListener('load', wszystko);
   window.addEventListener('resize', wszystko);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(wszystko);
 })();
