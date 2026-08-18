@@ -1,0 +1,305 @@
+/* --- emiliadabrowska.pl — warstwa na Dimension --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap');
+
+body { font-family: "Newsreader", Georgia, serif; font-weight: 300; }
+
+/* tła per podstrona */
+body.bg-portret #bg:after { background-image: url("../../images/portret.jpg"); }
+body.bg-detal #bg:after { background-image: url("../../images/detal.jpg"); }
+body.bg-gabinet #bg:after { background-image: url("../../images/gabinet.jpg"); }
+body.bg-grupa #bg:after { background-image: url("../../images/grupa.jpg"); }
+body.bg-polka #bg:after { background-image: url("../../images/polka.jpg"); }
+body.bg-sala #bg:after { background-image: url("../../images/sala.jpg"); }
+
+/* znak zamiast ikony */
+#header .logo { border: 0; width: 8rem; height: 8rem; line-height: 1; padding: 0; }
+#header .logo svg { width: 100%; height: 100%; display: block; color: #fff; }
+
+/* nagłówek */
+#header .content { max-width: 33rem; margin-left: auto; margin-right: auto; }
+.studio-line { margin: 0 0 .85rem 0; }
+#header h1 {
+  font-family: "Jost", sans-serif; font-weight: 500;
+  font-size: clamp(1.35rem, 3.9vw, 1.95rem);
+  letter-spacing: .13em; text-transform: uppercase; line-height: 1.24;
+  margin: 0;
+}
+#header .content .inner { padding: 2.6rem 0 2.2rem; }
+.title-line {
+  margin: .85rem 0 0 0;
+  font-family: "Jost", sans-serif; font-size: .72rem; font-weight: 300;
+  letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.86);
+}
+.studio-line {
+  font-family: "Jost", sans-serif; font-weight: 300;
+  font-size: .56rem;
+  letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.62);
+  white-space: nowrap;
+}
+#header .content p.credo, .credo {
+  margin: 1.5rem auto 0; max-width: none;
+  font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 300;
+  font-size: 1.06rem; line-height: 1.5; letter-spacing: .01em;
+  text-transform: none !important; letter-spacing: .015em !important;
+  white-space: nowrap; color: rgba(255,255,255,.95);
+}
+@media (max-width: 640px) {
+  .credo { font-size: .92rem; }
+  .studio-line { white-space: normal; font-size: .52rem; letter-spacing: .12em; }
+}
+@media (max-width: 400px) {
+  .credo { white-space: normal; font-size: 1.02rem; }
+}
+
+/* pionowy łącznik między kartą a menu */
+#header .content { position: relative; }
+#header nav { position: relative; z-index: 1; }
+/* wbudowana kreska Dimension przesunięta na środek pozycji "Grupy" */
+#header > nav:before { left: calc(var(--mid, 50%) - 1px) !important; }
+
+/* nawigacja */
+#header nav ul li a {
+  font-family: "Jost", sans-serif; font-weight: 300;
+  letter-spacing: .18em; font-size: .68rem;
+}
+
+/* treść paneli */
+#main article { font-size: 1.02rem; line-height: 1.72; }
+#main article h2.major {
+  font-family: "Jost", sans-serif; font-weight: 400;
+  letter-spacing: .18em; font-size: 1.05rem;
+}
+#main article h3 {
+  font-family: "Jost", sans-serif; font-weight: 400;
+  letter-spacing: .16em; font-size: .82rem; text-transform: uppercase;
+  margin: 2.2rem 0 .9rem;
+}
+#main article .lead { font-size: 1.16rem; line-height: 1.6; }
+#main article .pull {
+  font-size: 1.16rem; line-height: 1.5; font-style: italic;
+  border-left: 1px solid rgba(255,255,255,.35); padding-left: 1.3rem; margin: 1.8rem 0;
+}
+#main article ul.clean { list-style: none; padding: 0; margin: 0 0 1.6rem; }
+#main article ul.clean li {
+  padding: .62rem 0; border-top: 1px solid rgba(255,255,255,.14); font-size: .96rem; line-height: 1.5;
+}
+#main article ul.clean li:last-child { border-bottom: 1px solid rgba(255,255,255,.14); }
+#main article table.dates { width: 100%; margin-bottom: 1.6rem; }
+#main article table.dates td { font-size: .92rem; padding: .5rem .6rem .5rem 0; }
+#main article .price { font-family: "Jost", sans-serif; letter-spacing: .06em; }
+#main article .note { font-size: .9rem; color: rgba(255,255,255,.68); }
+
+/* stopka */
+#footer .copyright { font-family: "Jost", sans-serif; letter-spacing: .1em; font-size: .62rem; }
+
+
+/* --- listy z falą jako punktorem --- */
+#main article ul.fala { list-style: none; padding: 0; margin: 0 0 1.6rem; }
+#main article ul.fala li {
+  position: relative; padding: .34rem 0 .34rem 2.5rem;
+  font-size: .98rem; line-height: 1.55; border: 0;
+}
+#main article ul.fala li:before {
+  content: ""; position: absolute; left: 0; top: .78em;
+  width: 1.5rem; height: .58rem;
+  background: url("../../images/punktor.svg") no-repeat center / contain;
+  opacity: .75;
+}
+
+/* --- terminy --- */
+#main article .terminy { margin: 0 0 1.8rem; }
+#main article .terminy .grupa { margin-bottom: 1.4rem; }
+#main article .terminy .naglowek {
+  font-family: "Jost", sans-serif; font-weight: 300; font-size: .68rem;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.72); margin: 0 0 .55rem;
+}
+#main article .terminy .daty {
+  display: flex; flex-wrap: wrap; gap: .35rem .5rem; margin: 0;
+}
+#main article .terminy .daty span {
+  font-family: "Jost", sans-serif; font-size: .74rem; letter-spacing: .04em;
+  border: 1px solid rgba(255,255,255,.22); padding: .3rem .55rem; white-space: nowrap;
+}
+#main article .terminy .daty span.rok {
+  border: 0; padding: .3rem .1rem; color: rgba(255,255,255,.5); letter-spacing: .16em;
+}
+
+/* --- etapy --- */
+#main article .etap { margin: 0 0 1.1rem; }
+#main article .etap b {
+  font-family: "Jost", sans-serif; font-weight: 400; font-size: .74rem;
+  letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.9);
+}
+
+/* --- mapa --- */
+#main article .mapa { margin: 1.6rem 0 0; border: 1px solid rgba(255,255,255,.18); }
+#main article .mapa iframe { display: block; width: 100%; height: 320px; border: 0; }
+
+
+/* --- wyróżnione zdania samodzielne w tekście O mnie --- */
+#main article p.wyroznik {
+  font-size: 1.16rem; line-height: 1.5; font-style: italic;
+  color: rgba(255,255,255,.96);
+  margin: 2rem 0 1.4rem;
+}
+
+/* --- cytat --- */
+#main article p.cytat-wstep {
+  margin: 2.4rem 0 .8rem; font-size: .96rem; color: rgba(255,255,255,.72);
+}
+#main article p.cytat-wstep + blockquote.cytat { margin-top: 0; }
+#main article blockquote.cytat {
+  margin: 2.4rem 0; padding: 0 0 0 1.4rem;
+  border-left: 1px solid rgba(255,255,255,.35);
+  font-size: 1.14rem; line-height: 1.55; font-style: italic;
+}
+#main article blockquote.cytat cite {
+  display: block; margin-top: .7rem; font-style: normal;
+  font-family: "Jost", sans-serif; font-size: .66rem;
+  letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.62);
+}
+
+/* --- zamknięcie strony O mnie --- */
+#main article p.zamkniecie {
+  font-size: 1.1rem; line-height: 1.55;
+  margin-top: 2rem;
+}
+
+
+/* --- tytuł aktualnego naboru --- */
+#main article p.nabor-tytul {
+  font-family: "Jost", sans-serif; font-weight: 400;
+  font-size: 1.24rem; letter-spacing: .06em;
+  margin: -.4rem 0 1.4rem; color: rgba(255,255,255,.96);
+}
+
+
+/* --- opcje płatności --- */
+#main article .platnosc { display: flex; flex-wrap: wrap; gap: .9rem; margin: 0 0 1.8rem; }
+#main article .platnosc .opcja {
+  flex: 1 1 14rem; border: 1px solid rgba(255,255,255,.22);
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+#main article .platnosc .kwota {
+  display: block; font-family: "Jost", sans-serif; font-weight: 300;
+  font-size: 1.85rem; letter-spacing: .02em; line-height: 1.1;
+  margin: 0 0 .3rem; color: #fff;
+}
+#main article .platnosc .co {
+  display: block; font-family: "Jost", sans-serif; font-weight: 300;
+  font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.62); margin: 0 0 .85rem;
+}
+#main article .platnosc .opis {
+  margin: 0; font-size: .92rem; line-height: 1.5; color: rgba(255,255,255,.82);
+}
+
+
+/* ============ ZDJECIA - mniej filtrow, wieksza ostrosc ============ */
+
+/* 1) slabsze przyciemnienie i bez rastrowej tekstury na zdjeciu */
+#bg:before {
+  background-image: linear-gradient(to top, rgba(19,21,25,.34), rgba(19,21,25,.34)) !important;
+}
+/* 2) mniejsze rozmycie przy otwartym panelu */
+body.is-article-visible #bg:after {
+  -webkit-filter: blur(.06rem) !important;
+  filter: blur(.06rem) !important;
+  -webkit-transform: scale(1.03) !important;
+  transform: scale(1.03) !important;
+}
+/* 3) ostrzejsze skalowanie tla */
+#bg:after { image-rendering: -webkit-optimize-contrast; background-size: cover; }
+
+/* ============ zdjecie na gorze artykulu ============ */
+#main article .foto {
+  margin: 0 0 2.2rem;
+  border: 1px solid rgba(255,255,255,.16);
+  overflow: hidden;
+  line-height: 0;
+}
+#main article .foto img {
+  display: block; width: 100%; height: auto; max-width: none;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+
+/* --- wybor sciezki na koncu strony --- */
+#main article .sciezka {
+  display: flex; flex-wrap: wrap; gap: .9rem;
+  margin: 2.6rem 0 0; padding-top: 2.2rem;
+  border-top: 1px solid rgba(255,255,255,.18);
+}
+#main article .sciezka a {
+  flex: 1 1 14rem; display: block; text-decoration: none;
+  border: 1px solid rgba(255,255,255,.22);
+  padding: 1.35rem 1.4rem 1.45rem;
+  transition: background .35s ease, border-color .35s ease;
+}
+#main article .sciezka a:hover,
+#main article .sciezka a:focus-visible {
+  background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.45);
+}
+#main article .sciezka .co {
+  display: block; font-family: "Jost", sans-serif; font-weight: 300;
+  font-size: .6rem; letter-spacing: .24em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); margin: 0 0 .55rem;
+}
+#main article .sciezka .nazwa {
+  display: block; font-family: "Jost", sans-serif; font-weight: 300;
+  font-size: 1.24rem; letter-spacing: .04em; color: #fff; margin: 0 0 .5rem;
+}
+#main article .sciezka .opis {
+  display: block; font-size: .92rem; line-height: 1.5; color: rgba(255,255,255,.8);
+}
+#main article .sciezka .strzalka {
+  display: block; margin-top: .85rem; font-family: "Jost", sans-serif;
+  font-size: .6rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+}
+#main article p.otwarcie {
+  font-family: "Jost", sans-serif; font-weight: 300;
+  font-size: 1.34rem; line-height: 1.35; letter-spacing: .02em;
+  margin: 0 0 1.6rem; color: #fff;
+}
+
+
+/* --- wstep do etapow --- */
+#main article p.etapy-wstep {
+  font-family: "Jost", sans-serif; font-weight: 400;
+  font-size: .74rem; letter-spacing: .24em; text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+  margin: 2.2rem 0 1.2rem; padding-bottom: .7rem;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+/* --- blok wyrozniony ramka --- */
+#main article .blok {
+  position: relative;
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(255,255,255,.05);
+  padding: 1.8rem 1.9rem;
+  margin: 2.4rem 0;
+}
+
+#main article .blok p { margin: 0 0 1rem; font-style: italic; }
+#main article .blok p:last-child { margin-bottom: 0; }
+#main article .blok .mocne { color: rgba(255,255,255,.97); }
+
+
+/* --- numerowane etapy --- */
+#main article .etap { position: relative; padding-left: 3.1rem; margin: 0 0 1.25rem; }
+#main article .etap .nr {
+  position: absolute; left: 0; top: .06em;
+  font-family: "Jost", sans-serif; font-weight: 300; font-size: 1.15rem;
+  letter-spacing: .04em; color: rgba(255,255,255,.42);
+}
+
+
+/* --- wyrozniony naglowek aktualnego naboru --- */
+#main article h3.sekcja-nabor {
+  margin-top: 3rem; padding-top: 2.2rem;
+  border-top: 1px solid rgba(255,255,255,.3);
+}
