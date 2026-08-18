@@ -12,6 +12,11 @@ body.bg-grupa #bg:after { background-image: url("../../images/grupa.jpg"); }
 body.bg-polka #bg:after { background-image: url("../../images/polka.jpg"); }
 body.bg-sala #bg:after { background-image: url("../../images/sala.jpg"); }
 
+/* na wąskich ekranach (telefon) przycina się środek zdjęcia - przesuwamy kadr, żeby było widać twarz */
+@media screen and (max-width: 736px) {
+    body.bg-portret #bg:after { background-position: 78% center; }
+}
+
 /* znak zamiast ikony */
 #header .logo { border: 0; width: 8rem; height: 8rem; line-height: 1; padding: 0; }
 #header .logo svg { width: 100%; height: 100%; display: block; color: #fff; }
