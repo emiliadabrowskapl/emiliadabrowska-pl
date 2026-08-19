@@ -119,27 +119,31 @@
 <script>
 (function(){
   function kreska(){
-    var nav=document.querySelector('#header nav');
-    if(!nav) return;
-    var li=nav.querySelectorAll('ul li')[2];
-    if(!li) return;
-    nav.style.setProperty('--mid', (li.offsetLeft + li.offsetWidth/2) + 'px');
+	  var nav=document.querySelector('#header nav');
+	  if(!nav) return;
+	  if(nav.offsetWidth===0) return;
+	  var li=nav.querySelectorAll('ul li')[2];
+	  if(!li) return;
+	  nav.style.setProperty('--mid', (li.offsetLeft + li.offsetWidth/2) + 'px');
   }
-  function studio(){
-    var el=document.querySelector('.studio-line');
-    if(!el) return;
-    var max=el.parentElement.clientWidth;
-    if(!max) return;
-    var fs=10;
-    el.style.fontSize=fs+'px';
-    var i=0;
-    while(el.scrollWidth>max && fs>4.5 && i<60){ fs-=0.2; el.style.fontSize=fs+'px'; i++; }
-  }
-  function wszystko(){ studio(); kreska(); }
-        wszystko();
+	function studio(){
+		var el=document.querySelector('.studio-line');
+		if(!el) return;
+		var max=el.parentElement.clientWidth;
+		if(!max) return;
+		var fs=10;
+		el.style.fontSize=fs+'px';
+		var i=0;
+		while(el.scrollWidth>max && fs>4.5 && i<60){ fs-=0.2; el.style.fontSize=fs+'px'; i++; }
+	}
+	function wszystko(){ studio(); kreska(); }
+	wszystko();
 	window.addEventListener('load', wszystko);
-  window.addEventListener('resize', wszystko);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(wszystko);
+	window.addEventListener('resize', wszystko);
+	if (document.fonts && document.fonts.ready) document.fonts.ready.then(wszystko);
+	if (window.MutationObserver) {
+		new MutationObserver(wszystko).observe(document.body, {attributes:true, attributeFilter:['class']});
+	}
 })();
 </script>
 	</body>
