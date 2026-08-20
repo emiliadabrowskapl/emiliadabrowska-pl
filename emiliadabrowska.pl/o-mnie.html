@@ -86,6 +86,10 @@
 
 							<p>Poza gabinetem prowadzę <a href="https://szkolaspokoju.pl" target="_blank" rel="noopener">Szkołę Spokoju</a>, w której zajmuję się odpoczynkiem, wychodzeniem z chronicznego stresu i odzyskiwaniem energii życiowej. Nagrywam też podcast „Bez wstydu” - <a href="https://open.spotify.com/show/0ogx5RkCbFFsbMcqjS9Qk5" target="_blank" rel="noopener">rozmowy o tym, o czym zwykle się nie mówi</a>.</p>
 
+							<p>Wypowiadam się w mediach na tematy związane z psychologią, zdrowiem psychicznym, stresem i odpoczynkiem. Ostatnio byłam gościnią „Klubu Trójki” w Polskim Radiu, gdzie rozmawiałyśmy o tym, czy życie w ciągłym komforcie nie odbiera nam odporności na trudne chwile - <a href="https://trojka.polskieradio.pl/artykul/3721682,klub-trojki-o-pulapce-zycia-w-komforcie-czy-to-slepy-zaulek" target="_blank" rel="noopener">posłuchaj audycji</a>.</p>
+
+							<p>Jeśli szukasz gościa do rozmowy - <a href="kontakt.html">napisz</a>.</p>
+
 							<div class="sciezka">
 							<a href="psychoterapia.html">
 							<span class="co">Praca indywidualna</span>
@@ -119,31 +123,26 @@
 <script>
 (function(){
   function kreska(){
-	  var nav=document.querySelector('#header nav');
-	  if(!nav) return;
-	  if(nav.offsetWidth===0) return;
-	  var li=nav.querySelectorAll('ul li')[2];
-	  if(!li) return;
-	  nav.style.setProperty('--mid', (li.offsetLeft + li.offsetWidth/2) + 'px');
+    var nav=document.querySelector('#header nav');
+    if(!nav) return;
+    var li=nav.querySelectorAll('ul li')[2];
+    if(!li) return;
+    nav.style.setProperty('--mid', (li.offsetLeft + li.offsetWidth/2) + 'px');
   }
-	function studio(){
-		var el=document.querySelector('.studio-line');
-		if(!el) return;
-		var max=el.parentElement.clientWidth;
-		if(!max) return;
-		var fs=10;
-		el.style.fontSize=fs+'px';
-		var i=0;
-		while(el.scrollWidth>max && fs>4.5 && i<60){ fs-=0.2; el.style.fontSize=fs+'px'; i++; }
-	}
-	function wszystko(){ studio(); kreska(); }
-	wszystko();
-	window.addEventListener('load', wszystko);
-	window.addEventListener('resize', wszystko);
-	if (document.fonts && document.fonts.ready) document.fonts.ready.then(wszystko);
-	if (window.MutationObserver) {
-		new MutationObserver(wszystko).observe(document.body, {attributes:true, attributeFilter:['class']});
-	}
+  function studio(){
+    var el=document.querySelector('.studio-line');
+    if(!el) return;
+    var max=el.parentElement.clientWidth;
+    if(!max) return;
+    var fs=10;
+    el.style.fontSize=fs+'px';
+    var i=0;
+    while(el.scrollWidth>max && fs>4.5 && i<60){ fs-=0.2; el.style.fontSize=fs+'px'; i++; }
+  }
+  function wszystko(){ studio(); kreska(); }
+  window.addEventListener('load', wszystko);
+  window.addEventListener('resize', wszystko);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(wszystko);
 })();
 </script>
 	</body>
